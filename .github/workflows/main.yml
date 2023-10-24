@@ -23,4 +23,3 @@ jobs:
         with:
           name: index.html
           path: app/build/reports/lint-result-debug.html
-
