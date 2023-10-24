@@ -3,6 +3,8 @@ name: Push
 on:
   push:
     branches: [ "develop", "master" ]
+    pull_request:
+      branches: [ "develop", "master" ]
   workflow_dispatch:
 
 jobs:
@@ -10,4 +12,15 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-        - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: checkout the code
+        uses: actions/checkout@v2
+
+      - name: Run Lint
+        run: ./gradlew lintDebug
+
+      - name: Upload HTML test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: index.html
+          path: app/build/reports/lint-result-debug.html
+
