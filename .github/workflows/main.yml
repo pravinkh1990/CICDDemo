@@ -34,3 +34,20 @@ jobs:
         with:
           name: lint.html
           path: app/build/reports/lint-results-debug.html
+
+  unit-test:
+     needs: [lint]
+     runs-on: ubuntu-latest
+     steps:
+       - name: checkout the code
+         uses: actions/checkout@v2
+
+       - name: run tests
+         run: ./gradlew test
+
+       - name: upload test reports
+         uses: actions/checkout@v2
+
+     with:
+        name: unit_test_reports
+        path: app/build/reports/tests/testDebugUnitTest/
