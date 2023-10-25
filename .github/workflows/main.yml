@@ -47,7 +47,6 @@ jobs:
 
        - name: upload test reports
          uses: actions/checkout@v2
-
-     with:
-        name: unit_test_reports
-        path: app/build/reports/tests/testDebugUnitTest/
+         with:
+             name: unit_test_reports
+             path: app/build/reports/tests/testDebugUnitTest/
