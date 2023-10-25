@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  lint:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -32,5 +32,5 @@ jobs:
       - name: Upload HTML test report
         uses: actions/upload-artifact@v2
         with:
-          name: index.html
+          name: lint.html
           path: app/build/reports/lint-results-debug.html
