@@ -9,7 +9,6 @@ on:
 
 jobs:
   Sonar-Scan:
-    needs: [ UI-test ]
     runs-on: ubuntu-latest
     steps:
       - name: checkout the code
