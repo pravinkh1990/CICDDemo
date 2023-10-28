@@ -54,7 +54,26 @@ jobs:
          run: ./gradlew test
 
        - name: upload test reports
-         uses: actions/checkout@v2
+         uses: actions/upload-artifact@v2
          with:
              name: unit_test_reports
              path: app/build/reports/tests/testDebugUnitTest/
+
+  UI-test:
+    needs: [ unit-test ]
+      runs-on: macos-latest
+      steps:
+      - name: checkout the code
+        uses: actions/checkout@v2
+
+      - name: run espresso test
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
+
+      - name: upload test reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: instrumentation_test_reports
+          path: app/build/reports/androidTest/connected/
