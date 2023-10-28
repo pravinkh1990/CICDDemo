@@ -61,8 +61,8 @@ jobs:
 
   UI-test:
     needs: [ unit-test ]
-      runs-on: macos-latest
-      steps:
+    runs-on: macos-latest
+    steps:
       - name: checkout the code
         uses: actions/checkout@v2
 
