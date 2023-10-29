@@ -2,8 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.sonarqube")
+    id("jacoco")
 }
-
 android {
     namespace = "com.example.cicddemo"
     compileSdk = 34
@@ -19,8 +19,15 @@ android {
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+            enableAndroidTestCoverage =true
+            enableUnitTestCoverage =true
+        }
         release {
             isMinifyEnabled = false
+            enableAndroidTestCoverage =false
+            enableUnitTestCoverage =false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
