@@ -7,8 +7,8 @@ plugins {
 
 buildscript {
     dependencies {
-        classpath ("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.1.1")
-        classpath ("org.jacoco:org.jacoco.core:0.8.8")
+        classpath ("org.jacoco:org.jacoco.core:0.8.7")
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3")
     }
 }
 
