@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.sonarqube")
 }
-apply(from="$project.rootDir/jacoco.gradle")
+apply(from="$project.rootDir/jacoco.gradle.kts")
 android {
     namespace = "com.example.cicddemo"
     compileSdk = 34
