@@ -2,8 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.sonarqube")
-    id("jacoco")
 }
+apply(from="$project.rootDir/jacoco.gradle")
 android {
     namespace = "com.example.cicddemo"
     compileSdk = 34
@@ -34,6 +34,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
