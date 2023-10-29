@@ -4,9 +4,11 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
 }
 
+
 buildscript {
     dependencies {
         classpath ("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.1.1")
         classpath ("org.jacoco:org.jacoco.core:0.8.6")
     }
 }
+
